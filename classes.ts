@@ -1,13 +1,13 @@
 import VehicleAbstract from './VehicleAbstract';
 
 class Vehicle {
-  drive(): void {
+  public drive(): void {
     console.log('Wohoooooo!');
   }
-  beep(): void {
+  public beep(): void {
     console.log('Beeeeep!');
   }
-  stop(): void {
+  public stop(): void {
     console.log('STOP');
   }
 }
@@ -32,14 +32,21 @@ extendedVehicle.beep();
 // Can extend the abstract class and create a new instance of CarExtendingAbstract.
 class CarExtendingAbstract extends VehicleAbstract {
   // The abstract class contains an abstract method which must be implemented.
-  stop(): void {
+  public stop(): void {
     console.log('Implemented the abstract method from VehicleAbstract.');
+  }
+
+  // Calling the protected method steerProtected from the parent
+  // class VehicleAbstract
+  public protectedSteer(): void {
+    this.steerProtected();
   }
 }
 
 // Using the CarExtendingAbstract class which extends the abstract class VehicleAbstract
 const carAbstract = new CarExtendingAbstract();
 
-carAbstract.drive();
+carAbstract.protectedSteer();
+carAbstract.drivePrivatePublic();
 carAbstract.beep();
 carAbstract.stop();
