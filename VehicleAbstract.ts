@@ -1,4 +1,4 @@
-export default abstract class VehicleAbstract {
+export abstract class VehicleAbstract {
   public drive(): void {
     console.log('Wohoooooo from the abstract one!');
   }

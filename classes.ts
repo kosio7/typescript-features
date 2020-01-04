@@ -1,4 +1,4 @@
-import VehicleAbstract from './VehicleAbstract';
+import { VehicleAbstract } from './VehicleAbstract';
 
 class Vehicle {
   constructor(public color: string) {}
