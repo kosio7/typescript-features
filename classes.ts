@@ -1,6 +1,8 @@
 import VehicleAbstract from './VehicleAbstract';
 
 class Vehicle {
+  constructor(public color: string) {}
+
   public drive(): void {
     console.log('Wohoooooo!');
   }
@@ -14,7 +16,7 @@ class Vehicle {
 
 // Using the Vehicle class
 // NOTE: Cannot create new instance if it is an abstract class
-const vehicle = new Vehicle();
+const vehicle = new Vehicle('red');
 
 vehicle.drive();
 vehicle.beep();
@@ -22,9 +24,13 @@ vehicle.stop();
 
 // Extending the 'normal' Vehicle class does not require
 // implementing any of it's methods.
-class Car extends Vehicle {}
+class Car extends Vehicle {
+  constructor(public wheels: number, color: string) {
+    super(color);
+  }
+}
 
-const extendedVehicle = new Car();
+const extendedVehicle = new Car(4, 'blue');
 
 extendedVehicle.drive();
 extendedVehicle.beep();
